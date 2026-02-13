@@ -134,11 +134,11 @@ final_df, missing_stats, product_analysis = pipeline.run()
 
 #### Scoring Dinámico
 ```python
-from clases.scoring.NosScore import ScoreDynamic
+from clases.ml_models.scoring.NosScore import ScoreDynamic
 
 score_calculator = ScoreDynamic(
-    resumen_anual=benchmark_data,
-    data_to_score=customer_data,
+    year_data=benchmark_data,
+    df=customer_data,
     dimension_cols=['customer', 'channel', 'team']
 )
 scored_data = score_calculator.calcular_score()
